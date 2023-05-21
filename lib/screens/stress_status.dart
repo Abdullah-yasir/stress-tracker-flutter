@@ -31,48 +31,33 @@ class _StressStatusScreenState extends State<StressStatusScreen> {
         ],
       ),
       body: Container(
-        padding: const EdgeInsets.only(left: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const SizedBox(height: 20),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Container(
-            //     height: 80,
-            //     child: Row(
-            //       crossAxisAlignment: CrossAxisAlignment.center,
-            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //       children: [
-            //         Icon(Icons.power_settings_new),
-            //         Icon(Icons.notifications_active),
-            //       ],
-            //     ),
-            //   ),
-            // ),
-
-            Table(
+            Column(
               children: [
-                TableRow(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    TableCell(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Name',
-                            style: TextStyle(fontSize: 12, color: Colors.grey),
-                          ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          Text(
-                            'Ali Ahmed',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                        ],
-                      ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'Name',
+                          style: TextStyle(fontSize: 12, color: Colors.blue),
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Text(
+                          'Ali Ahmed',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ],
                     ),
                     // const TableCell(
                     //   child: Text(
@@ -86,41 +71,37 @@ class _StressStatusScreenState extends State<StressStatusScreen> {
                     //       icon:
                     //           const Icon(Icons.signal_cellular_4_bar_outlined)),
                     // ),
-                    TableCell(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Stress Status',
-                            style: TextStyle(fontSize: 12, color: Colors.grey),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Stress Status',
+                          style: TextStyle(fontSize: 12, color: Colors.blue),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: SizedBox(
+                            height: 30,
+                            child: Image.asset(
+                                "static/images/stressed_icon.png",
+                                scale: 0.2),
                           ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: SizedBox(
-                              height: 30,
-                              child: Image.asset(
-                                  "static/images/stressed_icon.png",
-                                  scale: 0.2),
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    TableCell(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'History',
-                            style: TextStyle(fontSize: 12, color: Colors.grey),
-                          ),
-                          IconButton(
-                              icon: const Icon(Icons.history),
-                              onPressed: () {
-                                Navigator.pushNamed(context, Routes.CALENDAR);
-                              }),
-                        ],
-                      ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'History',
+                          style: TextStyle(fontSize: 12, color: Colors.blue),
+                        ),
+                        IconButton(
+                            icon: const Icon(Icons.history),
+                            onPressed: () {
+                              Navigator.pushNamed(context, Routes.CALENDAR);
+                            }),
+                      ],
                     ),
                   ],
                 ),
